@@ -1,0 +1,545 @@
+%
+% exemplo genérico de uso da classe iiufrgs.cls
+% $Id: iiufrgs.tex,v 1.1.1.1 2005/01/18 23:54:42 avila Exp $
+%
+% This is an example file and is hereby explicitly put in the
+% public domain.
+%
+\documentclass[ppgc,espec]{iiufrgs}
+% Para usar o modelo, deve-se informar o programa e o tipo de documento.
+% Programas :
+%   * cic       -- Graduação em Ciência da Computação
+%   * ecp       -- Graduação em Ciência da Computação
+%   * ppgc      -- Programa de Pós Graduação em Computação
+%   * pgmigro   -- Programa de Pós Graduação em Microeletrônica
+%   
+% Tipos de Documento:
+%   * tc                -- Trabalhos de Conclusão (apenas cic e ecp)
+%   * diss ou mestrado  -- Dissertações de Mestrado (ppgc e pgmicro)
+%   * tese ou doutorado -- Teses de Doutorado (ppgc e pgmicro)
+%   * ti                -- Trabalho Individual (ppgc e pgmicro)
+%   * espec                -- TCC de especialização ppgc
+%   * pep                -- Proposta de Estudo e Pesquisa para especialização ppgc
+% 
+% Outras Opções:
+%   * english    -- para textos em inglês
+%   * openright  -- Força início de capítulos em páginas ímpares (padrão da
+%                   biblioteca)
+%   * oneside    -- Desliga frente-e-verso
+%   * nominatalocal -- Lê os dados da nominata do arquivo nominatalocal.def
+
+
+% Use unicode
+\usepackage[utf8]{inputenc}   % pacote para acentuação
+
+% Necessário para incluir figuras
+\usepackage{graphicx}           % pacote para importar figuras
+
+
+\usepackage{times}              % pacote para usar fonte Adobe Times
+% \usepackage{palatino}
+% \usepackage{mathptmx}          % p/ usar fonte Adobe Times nas fórmulas
+
+\usepackage[alf,abnt-emphasize=bf]{abntex2cite}	% pacote para usar citações abnt
+
+% adiciona a opção de gerar tabelas com multi pages
+\usepackage{longtable}
+
+%
+% Informações gerais
+%
+
+\title{Análise Visual e Predição de Acidentes de Trânsito nas Rodovias Federais do Brasil}
+
+\author{Barros}{Bergson Brito}
+% alguns documentos podem ter varios autores:
+%\author{Flaumann}{Frida Gutenberg}
+%\author{Flaumann}{Klaus Gutenberg}
+
+% orientador e co-orientador são opcionais (não diga isso pra eles :))
+\advisor[Prof.~Dr.]{Comba}{João Luiz Dihl}
+%\coadvisor[Prof.~Dr.]{Knuth}{Donald Ervin}
+
+% a data deve ser a da defesa; se nao especificada, são gerados
+% mes e ano correntes
+%\date{maio}{2001}
+
+% o local de realização do trabalho pode ser especificado (ex. para TCs)
+% com o comando \location:
+%\location{Itaquaquecetuba}{SP}
+
+% itens individuais da nominata podem ser redefinidos com os comandos
+% abaixo:
+% \renewcommand{\nominataReit}{Prof\textsuperscript{a}.~Wrana Maria Panizzi}
+% \renewcommand{\nominataReitname}{Reitora}
+% \renewcommand{\nominataPRE}{Prof.~Jos{\'e} Carlos Ferraz Hennemann}
+% \renewcommand{\nominataPREname}{Pr{\'o}-Reitor de Ensino}
+% \renewcommand{\nominataPRAPG}{Prof\textsuperscript{a}.~Joc{\'e}lia Grazia}
+% \renewcommand{\nominataPRAPGname}{Pr{\'o}-Reitora Adjunta de P{\'o}s-Gradua{\c{c}}{\~a}o}
+% \renewcommand{\nominataDir}{Prof.~Philippe Olivier Alexandre Navaux}
+% \renewcommand{\nominataDirname}{Diretor do Instituto de Inform{\'a}tica}
+% \renewcommand{\nominataCoord}{Prof.~Carlos Alberto Heuser}
+% \renewcommand{\nominataCoordname}{Coordenador do PPGC}
+% \renewcommand{\nominataBibchefe}{Beatriz Regina Bastos Haro}
+% \renewcommand{\nominataBibchefename}{Bibliotec{\'a}ria-chefe do Instituto de Inform{\'a}tica}
+% \renewcommand{\nominataChefeINA}{Prof.~Jos{\'e} Valdeni de Lima}
+% \renewcommand{\nominataChefeINAname}{Chefe do \deptINA}
+% \renewcommand{\nominataChefeINT}{Prof.~Leila Ribeiro}
+% \renewcommand{\nominataChefeINTname}{Chefe do \deptINT}
+
+% A seguir são apresentados comandos específicos para alguns
+% tipos de documentos.
+
+% Relatório de Pesquisa [rp]:
+% \rp{123}             % numero do rp
+% \financ{CNPq, CAPES} % orgaos financiadores
+
+% Trabalho Individual [ti]:
+% \ti{123}     % numero do TI
+% \ti[II]{456} % no caso de ser o segundo TI
+
+% Monografias de Especialização [espec]:
+\espec{Ciência de Dados} % Curso de Especialização em ...
+\coord[Profa.~Dra.]{Renata}{Galante} % coordenador do curso
+\dept{INA}                                 % departamento relacionado
+
+%
+% palavras-chave
+% iniciar todas com letras minúsculas, exceto no caso de abreviaturas
+%
+\keyword{formatação eletrônica de documentos}
+\keyword{\LaTeX}
+\keyword{ABNT}
+\keyword{UFRGS}
+
+%
+% inicio do documento
+%
+\begin{document}
+
+% folha de rosto
+% às vezes é necessário redefinir algum comando logo antes de produzir
+% a folha de rosto:
+% \renewcommand{\coordname}{Coordenadora do Curso}
+\maketitle
+
+% dedicatoria
+\clearpage
+\begin{flushright}
+\mbox{}\vfill
+{\sffamily\itshape
+``Porque Deus amou o mundo de tal maneira que deu o seu Filho unigênito, para que todo aquele que nele crê não pereça, mas tenha a vida eterna.''\\}
+--- \textsc{João 3:16}
+\end{flushright}
+
+% agradecimentos
+\chapter*{Agradecimentos}
+
+asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd 
+asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd 
+asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd 
+
+asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd
+asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd 
+
+asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd
+
+asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd 
+asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd 
+asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd 
+
+asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd
+asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd 
+
+asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd
+
+
+
+% resumo na língua do documento
+\begin{abstract}
+O transporte rodoviário, com mais de 1,7 milhões de Km, é o principal sistema logístico do Brasil, contando com uma malha que movimenta 65\% das cargas do nosso território. Assim como nos centros urbanos, os acidentes de trânsito também são uma dura realidade nas rodovias federais, trazendo muitos riscos para aqueles que transitam diariamente, prejuízos para as seguradoras, além da perda de vidas devido aos muitos acidentes com vítimas fatais. Como objetivo deste trabalho, faremos uma análise dos acidentes que acontecem nas rodovias federais do Brasil, enumerando seus tipos e causas, bem como agregando os dados usando diversas formas. A abordagem proposta será avaliada através de uma base de dados disponibilizada pela própria autarquia responsável pelas rodovias federais, além da geração de paineis visuais contendo gráficos, em diferentes formas de visualização.
+\end{abstract}
+
+% resumo na outra língua
+% como parametros devem ser passados o titulo e as palavras-chave
+% na outra língua, separadas por vírgulas
+\begin{englishabstract}{Using \LaTeX\ to Prepare Documents at II/UFRGS}{traffic accidents, federal roads, Brazil, data Visuzalition}
+Road transport, with more than 1.7 million km, is the main logistics system in Brazil, with a network that moves 65\% of the cargo in our territory. Just like in urban centers, traffic accidents are also a harsh reality on federal highways, bringing many risks to those who travel daily, losses to insurance companies, in addition to the loss of lives due to the many accidents with fatal victims. As an objective of this work, we will analyze the accidents that occur on federal highways in Brazil, listing their types and causes, as well as aggregating the data using different forms. The proposed approach will be evaluated through a database made available by the authority responsible for federal highways, in addition to the generation of visual panels containing graphics, in different visualization forms.
+\end{englishabstract}
+
+% lista de abreviaturas e siglas
+% o parametro deve ser a abreviatura mais longa
+\begin{listofabbrv}{PRF}
+    \item [AI] Artificial Intelligence
+    \item [AM] Aprendizado de Máquina
+    \item [API] Application Programming Interface
+    \item [BR] Termo associado a qualquer rodovia de jurisdição Federal do Brasil
+    \item [CSV] Comma-Separated-Values
+    \item [KNN] K-Nearest Neighbors
+    \item [IA] Inteligência Artificial
+    \item [ML] Machine Learning
+    \item [MT] Ministério dos Transportes
+    \item [PRF] Polícia Rodoviária Federal
+    \item [SVM] Support Vector Machines
+    \item [UF] Unidade Federativa                
+\end{listofabbrv}
+
+
+% idem para a lista de símbolos
+%\begin{listofsymbols}{$\alpha\beta\pi\omega$}
+%       \item[$\sum{\frac{a}{b}}$] Somatório do produtório
+%       \item[$\alpha\beta\pi\omega$] Fator de inconstância do resultado
+%\end{listofsymbols}
+
+% lista de figuras
+\listoffigures
+
+% lista de tabelas
+\listoftables
+
+% sumario
+\tableofcontents
+
+% aqui comeca o texto propriamente dito
+
+% introducao
+\chapter{Introdução}\label{ch:intro}
+
+Contando com mais de 1,7 milhões de km, o transporte rodoviário é o principal sistema logístico do Brasil. Atualmente, trafegam por este sistema, mais de 65\% das cargas do nosso território. Com um fluxo tão grande de motos, carros, caminhões e carretas trafegando diariamente por essas rodovias, é de se esperar que ocorra diariamente, uma grande quantidade de acidentes. 
+
+Como objetivo deste trabalho, faremos uma análise dos acidentes que acontecem nas rodovias federais do Brasil, enumerando seus tipos e causas, bem como agregando os dados usando diversas formas. A abordagem proposta será avaliada através de uma base de dados disponibilizada pela própria autarquia responsável pelas rodovias federais do Brasil \cite{prf-dados-abertos:2024}, além da geração de paineis visuais contendo gráficos, estatísticas e outras formas de visualização.
+
+Através da análise dos dados obtidos pela PRF, pretende-se identificar as rodovias federais que apresentaram as maiores e as menores variações do quantitativo de acidentes com relação aos anos anteriores, assim como identificar quais meses do ano e quais dias da semana apresentaram os maiores índices de acidentes. É objetivo deste trabalho também, identificar quais rodovias apresentaram um mudança na posição no ranking das rodovias com relação ao quantitativo de acidentes. 
+
+Com a conclusão deste trabalho, entende-se que o mesmo auxiliará as equipes responsáveis pelo gerenciamento estratégico e tático da PRF, através da criação de gráficos que farão parte do painel visual dos dados, além de ser útil para as equipes responsáveis pelo planejamento do Ministério dos Transportes (MT), na tomada de decisão das possíveis melhorias de infraestrutura das rodovias, que ficarão evidentes no relatório final do trabalho.
+
+Além disso, este trabalho será útil também para a sociedade civil como um todo, pois entendemos que ao identificarmos os pontos críticos da nossa malha rodoviária, conseguiremos diminuir os acidentes que nelas ocorrem, e certamente teremos ganhos logísticos e financeiros, além dos ganhos de segurança de todos os cidadãos que trafegam diariamente pelas mesmas.
+
+\chapter{Fundamentação Teórica}\label{ch:intro}
+
+\section{Configuração do ambiente de desenvolvimento}
+
+Para o desenvolvimento de todo o trabalho, utilizamos ferramentas gratuitas e já consagradas no mercado de desenvolvimento de software e de painéis de dados.
+
+A IDE utilizada foi o Visual Studio Code, que no presente momento deste trabalho encontra-se na versão 1.95.3. Esta ferramenta pode ser baixada gratuitamente no link https://code.visualstudio.com/, é muito usada pela comunidade por estar disponível para vários sistemas operacionais (Windows, Linux, MacOS, etc), além de ser simples de instalar e configurar, além de possuir uma infinidade de plugins para várias linguagens.
+
+O projeto foi desenvolvido usando a linguagem Python, na versão 3.10.12, fazendo uso de todos os recursos avançadas na linguagem voltado para a área de análise e engenharia de dados. O Python é uma linguagem interpretada, interativa, e com suporte à orientação a objetos, assim como as principais linguagens do mercado. Pode ser baixado no seguinte link https://www.python.org/, e de acordo com a própria documentação oficial da mesma, você está livre para fazer o que quiser com o código desde que deixe explícito os direitos autorais e os exiba nos artefatos que você vier a produzir.
+
+
+Para os propósitos do projeto, fizemos uso de algumas bibliotecas específicas para a leitura e manipulação de arquivos do tipo CSV (Comma-Separated-Values ), são elas: pandas (versão 2.1.1) e geopandas (versão 1.0.1). Para a geração dos gráficos, fizemos uso da ferramenta Altair (versão 5.3.0), disponível no link \url{https://altair-viz.github.io/}. Para concentrar todos os gráficos em um único ponto, desenvolvemos o painel final usando a ferramenta Streamlit (versão 1.37.1) disponível no link \url{https://streamlit.io/}.
+
+\section{Explicando os dados}
+
+\subsection{Origem dos dados}
+
+Os dados nos quais o trabalho se refere, estão localizados no sítio do Governo Federal, na área de Acesso à Informação, na subárea de Dados Abertos, no link \url{https://www.gov.br/prf/pt-br/acesso-a-informacao/dados-abertos/dados-abertos-da-prf}. Todos os dados contidos no link anterior são classificados como abertos, de acordo com a Lei de Acesso à Informação (LAI), na Instrução Normativa SLTI nº 4, de 13 de abril de 2012 (que institui a Infraestrutura Nacional de Dados Abertos), Decreto nº 8.777, de 11 de maio de 2016, podendo fazer uso dos mesmos tanto o governo ou a própria sociedade em geral.   
+
+\begin{figure}[h]
+    \caption{Origem dos dados da pesquisa}
+    \centerline{\includegraphics[width=0.9\textwidth]{figuras/cap-02/tcc-dados-abertos-prf.png}}
+    \legend{Fonte: Sítio Dados Abertos da PRF}
+    \label{fig:}
+\end{figure}
+
+\subsection{Arquivos}
+
+Os arquivos contidos na área de Dados Abertos da PRF, são do tipo específico CSV (Comma-Separated-Values ) e foram agrupados por ano (de 2007 a 2024), de acordo com as categorias: por ocorrência, por pessoa e por pessoa - Todas as causas e tipos de acidentes. Entre os anos de 2007 a 2016, os arquivos foram disponibilizados nas categorias "por ocorrência" e "por pessoa". A partir de 2017, os arquivos foram disponibilizados em mais uma categoria: "por pessoa - Todas as causas e tipos de acidentes".
+
+\begin{figure}[h]
+    \caption{Lista de arquivos e suas categorias}
+    \centerline{\includegraphics[width=0.9\textwidth]{figuras/cap-02/tcc-arquivos-csv.png}}
+    \legend{Fonte: Sítio Dados Abertos da PRF}
+    \label{fig:}
+\end{figure}
+
+\subsection{Detalhamento dos campos}
+
+\subsubsection{Arquivos por ocorrência}
+
+%['id', 'data_inversa', 'dia_semana', 'horario', 'uf', 'br', 'km',
+%       'municipio', 'causa_acidente', 'tipo_acidente',
+%       'classificacao_acidente', 'fase_dia', 'sentido_via',
+%       'condicao_metereologica', 'tipo_pista', 'tracado_via', 'uso_solo',
+%       'pessoas', 'mortos', 'feridos_leves', 'feridos_graves', 'ilesos',
+%       'ignorados', 'feridos', 'veiculos', 'latitude', 'longitude', 'regional',
+%       'delegacia', 'uop'],
+
+\begin{longtable}[c]{| p{3cm}|p{3cm}|p{3cm}|p{3cm} |}
+ \caption{Detalhamento dos campos do arquivo Acidentes por Ocorrência.\label{long}}\\
+ \hline
+ \multicolumn{4}{| c |}{Acidentes por Ocorrência}\\
+ \hline Campo& Tipo & Detalhe & Exemplos \\
+ \hline
+ \endfirsthead
+ \hline
+ \multicolumn{4}{|c|}{Acidentes por Ocorrência \ref{long}}\\
+ \hline Campo& Tipo & Detalhe & Exemplos \\
+ \hline 
+ \endhead
+ \hline
+ \endfoot
+ \hline
+ \multicolumn{4}{| c |}{Fim da Tabela \ref{long} }\\
+ \hline\hline
+ \endlastfoot
+    \hline ID & Numérico & Identificação da ocorrência & 571789 \\
+    \hline Data Inversa & Data & Data no formato inverso yyyy-mm-dd & 2024-01-01 \\
+    \hline Dia Semana & Alfanumérico & Dia da semana da ocorrência & Domingo, Segunda-feira,..., Sábado \\
+    \hline Horário & Hora & Hora da ocorrência no formato HH:mm:ss & 15:30:00 \\
+    \hline UF & Alfanumérico & UF da ocorrência & PE \\ 
+    \hline BR & Numérico & BR da ocorrência & 101 \\
+    \hline KM & Numérico & Km da BR no qual a ocorrência ocorreu & 852.9 \\
+    \hline Município & Alfanumérico & Município no qual a ocorrência ocorreu & Recife \\
+    \hline Causa Acidente & Alfanumérico & Causa da ocorrência & Ultrapassagem Indevida \\
+    \hline Tipo Acidente & Alfanumérico & Tipo da ocorrência & Colisão traseira \\
+    \hline Classificacao Acidente & Alfanumérico & Classificação da ocorrência & Com Vítimas Fatais \\
+    \hline Fase Dia & Alfanumérico & Fase do dia da ocorrência & Dia Claro \\
+    \hline Sentido Via & Alfanumérico & Sentido da via no qual ocorreu a ocorrência & Crescente / Decrescente \\
+    \hline Condicao Metereologica & Alfanumérico & Condição metereológica da ocorrência & Céu Claro \\
+    \hline Tipo Pista & Alfanumérico & Tipo da pista da ocorrência & Simples / Dupla \\ 
+    \hline Traçado Via & Alfanumérico & Traçado da via da ocorrência & Reta / Curva / Aclive / Declive \\
+    \hline Uso Solo & Alfanumérico & Uso do solo (Urbano) & Sim/Não \\
+    \hline Pessoas & Numérico & Quantidade de pessoas envolvidas na ocorrência &  \\
+    \hline Mortos & Numérico & Quantidade de mortos envolvidos na ocorrência &  \\
+    \hline Feridos leves & Numérico & Quantidade de feridos leves envolvidos na ocorrência &  \\
+    \hline Feridos graves & Numérico & Quantidade de feridos graves envolvidos na ocorrência &  \\
+    \hline Ilesos & Numérico & Quantidade de ilesos envolvidos na ocorrência &  \\
+    \hline Ignorados & Numérico & Quantidade de pessoas ignioradas na ocorrência &  \\
+    \hline Feridos & Numérico & Quantidade de pessoas feridas na ocorrência &  \\
+    \hline Veiculos & Numérico & Quantidade de veículos envolvidos na ocorrência &  \\
+    \hline Latitude & Numérico & Latitude da ocorrência & -10.35601949 \\
+    \hline Longitude & Numérico & Latitude da ocorrência & -36.90552235 \\
+    \hline Regional & Alfanumérico & Regional da ocorrência & SPRF-RS \\
+    \hline Delegacia & Alfanumérico & Delegacia da ocorrência & DEL03-RS \\
+    \hline UOP & Alfanumérico & Uop da ocorrência & UOP02-DEL03-RS \\
+ \end{longtable}
+
+\subsubsection{Arquivos por Pessoa}
+
+%['id', 'pesid', 'data_inversa', 'dia_semana', 'horario', 'uf', 'br',
+%       'km', 'municipio', 'causa_acidente', 'tipo_acidente',
+%       'classificacao_acidente', 'fase_dia', 'sentido_via',
+%       'condicao_metereologica', 'tipo_pista', 'tracado_via', 'uso_solo',
+%       'id_veiculo', 'tipo_veiculo', 'marca', 'ano_fabricacao_veiculo',
+%       'tipo_envolvido', 'estado_fisico', 'idade', 'sexo', 'ilesos',
+%       'feridos_leves', 'feridos_graves', 'mortos', 'latitude', 'longitude',
+%       'regional', 'delegacia', 'uop']
+
+\begin{longtable}[c]{| p{3cm}|p{3cm}|p{3cm}|p{3cm} |}
+ \caption{Detalhamento dos campos do arquivo Acidentes por Pessoa.\label{long}}\\
+ \hline
+ \multicolumn{4}{| c |}{Acidentes por Pessoa}\\
+ \hline Campo& Tipo & Detalhe & Exemplos \\
+ \hline
+ \endfirsthead
+ \hline
+ \multicolumn{4}{|c|}{Acidentes por Pessoa \ref{long}}\\
+ \hline Campo& Tipo & Detalhe & Exemplos \\
+ \hline 
+ \endhead
+ \hline
+ \endfoot
+ \hline
+ \multicolumn{4}{| c |}{Fim da Tabela \ref{long} }\\
+ \hline\hline
+ \endlastfoot
+
+    \hline Id & Numérico & Identificação da ocorrência & 571838	\\
+    \hline Pessoa Id & Numérico & Identificação da ocorrência & 1269159 \\
+    \hline Data Inversa & Data & Data no formato inverso yyyy-mm-dd & 2024-11-09 \\
+    \hline Dia Semana & Alfanumérico & Dia da semana da ocorrência & Domingo, Segunda-feira,..., Sábado \\
+    \hline Horário & Hora & Hora da ocorrência no formato HH:mm:ss & 11:45:00 \\
+    \hline UF & Alfanumérico & UF da ocorrência & SC \\ 
+    \hline BR & Numérico & BR da ocorrência & 116 \\
+    \hline KM & Numérico & Km da BR no qual a ocorrência ocorreu & 551 \\
+    \hline Município & Alfanumérico & Município no qual a ocorrência ocorreu & Joinville \\
+    \hline Causa Acidente & Alfanumérico & Causa da ocorrência & Ultrapassagem Indevida \\
+    \hline Tipo Acidente & Alfanumérico & Tipo da ocorrência & Colisão frontal \\
+    \hline Classificacao Acidente & Alfanumérico & Classificação da ocorrência & Com Vítimas Feridas \\
+    \hline Fase Dia & Alfanumérico & Fase do dia da ocorrência & Dia Claro \\
+    \hline Sentido Via & Alfanumérico & Sentido da via no qual ocorreu a ocorrência & Crescente / Decrescente \\
+    \hline Condicao Metereologica & Alfanumérico & Condição metereológica da ocorrência & Nublado \\
+    \hline Tipo Pista & Alfanumérico & Tipo da pista da ocorrência & Simples / Dupla \\
+    \hline Traçado Via & Alfanumérico & Traçado da via da ocorrência & Reta / Curva / Aclive / Declive \\
+    \hline Uso Solo & Alfanumérico & Uso do solo (Urbano) & Sim/Não \\
+    \hline id veiculo & Numérico & Identificação do veículo da ocorrência & 1018348 \\
+    \hline tipo veiculo & Numérico & Tipo do veículo da ocorrência & Caminha~o \\
+    \hline marca & Numérico & Marca do veículo da ocorrência & SCANIA/P 310 B8X2 \\ 
+    \hline ano fabricacao veiculo & Numérico & Ano de fabricação do veículo da ocorrência & 2013 \\
+    \hline tipo envolvido & Numérico & Tipo do Envolvido na ocorrência & Condutor / Passageiro \\
+    \hline estado fisico & Numérico & Estado físico do envolvido na ocorrência & Lesões Leves / Ileso \\
+    \hline idade & Numérico & Idade do envolvido & 32 \\
+    \hline sexo & Numérico & Sexo do envolvido & Masculino \\
+    \hline ilesos & Numérico & Qtd. de ilesos da ocorrência & 0/1 \\
+    \hline feridos leves & Numérico & Qtd. de feridos leves da ocorrência & 0/1 \\
+    \hline feridos graves & Numérico & Qtd. de feridos graves da ocorrência & 0/1 \\
+    \hline mortos & Numérico & Qtd. de mortos da ocorrência & 0/1 \\
+    \hline latitude & Numérico & Latitude da ocorrência & -15.69004774 \\
+    \hline longitude & Numérico & Longitude da ocorrência & -55.90523988 \\
+    \hline regional & Numérico & Regional da ocorrência & SPRF-MT \\
+    \hline delegacia & Numérico & Delegacia da ocorrência & DEL01-MT \\
+    \hline uop & Numérico & UOP da ocorrência & UOP02-DEL01-MT \\
+    
+ \end{longtable}
+
+\subsubsection{Arquivos por Pessoa - Todas as causas e tipos de acidentes}
+
+Esse tipo de arquivo não foi usado no trabalho pois é uma compilação dos dois tipos explicados anteriormente.
+
+\section{Gerando os gráficos com Vega-Altair}
+
+A ferramenta utilizada para a geração dos gráficos da pesquisa foi o Vega-Altair, ou simplesmente Altair. Um dos critérios para a escolha do mesmo foi o fato do Altair ser uma ferramenta 100\% integrada à tecnologia geradora do painel de gráficos Streamlit, que será detalhado na próxima seção.
+
+O Altair é uma biblioteca declarativa para visualização de gráficos desenvolvido em Python. Sua API é bastante simples, amigável e intuitiva. O Vega-Altair foi construído sobre a poderosa gramática Vega-Lite, permitindo assim desenvolver vários tipos diferentes de gráficos, de forma rápida e prática, escrevendo pouquíssimo código fonte, permitindo assim explorar os dados com mais facilidade. O mesmo encontra-se disponível para download no seguinte link \url{https://altair-viz.github.io/}.
+
+\begin{figure}[h]
+    \caption{Gráficos gerados pelo Altair}
+    \centerline{\includegraphics[width=0.9\textwidth]{figuras/cap-02/tcc-cap02-vega-altair.png}}
+    \legend{Fonte: Sítio oficial do Altair}
+    \label{fig:}
+\end{figure}
+
+\section{Gerando o painel com Streamlit}
+
+Como citado na seção anterior, a ferramenta escolhida para criação do painel agregador de gráficos e dados em geral foi o Streamlit, que encontra-se disponível para uso na seguinte url \url{https://streamlit.io/}. O Streamlit foi desenvolvido em Python, possui uma grande quantidade de componentes prontos para uso em recursos de imagens, vídeos, gráficos, llm e mapas. Seu uso é simples e intuitivo, e se destaca por permitir desenvolver e compartilhar aplicativos de dados de forma integrada com a própria plataforma de deploy disponibilizado pelo mesmo.
+
+\begin{figure}[h]
+    \caption{Vários componentes disponíveis pelo Streamlit}
+    \centerline{\includegraphics[width=0.9\textwidth]{figuras/cap-02/tcc-cap02-streamlit.png}}
+    \legend{Fonte: Sítio oficial do Streamlit}
+    \label{fig:}
+\end{figure}
+
+\section{Organização do projeto}
+
+O painel do projeto foi desenvolvido totalmente em python, para poder fazer uso dos benefícios das tecnologias Vega-Altair e Streamlit.
+
+As versões inicais dos gráficos foram implementadas e testadas em arquivos Jupyter Notebooks (extensão ipynb). A ferramenta Jupyter encontra-se disponível para uso na url \url{https://jupyter.org/}. A mesma foi necessária no desenvolvimento prévio dos gráficos por permitir visualizar as versões iniciais dos gráficos de uma forma integrada e visual. Assim, foi possível realizar diversos ajustes de parâmetros dos mesmos (título, altura, largura, tooltips, eixos x e y) antes de trazê-los para o painel integrado de gráficos.
+
+A seguir, teremos uma listagem dos arquivos mais importantes para a implementação do painel e uma breve descrição de cada um deles:
+
+\begin{itemize}
+  \item tcc\_detalhamento\_dados.ipynb - Contem o detalhamento dos dados dos arquivos CSV através do uso do pandas.
+  \item tcc\_painel\_geracao\_dados.py - Arquivo responsável pelo processo de leitura dos dados abertos da PRF (arquivos CSV) e  responsável pelo pré-processamento dos mesmos.
+  \item tcc\_painel\_ajustar\_dados.py  - Arquivo responsável pelo ajuste dos dados gerados a partir do processo de pré-processamento. 
+  \item tcc\_painel\_funcoes\_agrupamento.py - Arquivo responsável pelas funções de agrupamento necessário para gerar os gráficos.
+  \item tcc\_painel\_graficos.py - Arquivo responsável pelo desenvolvimento de todos os gráficos do painel.
+  \item tcc-painel-preprocessamento.ipynb - Arquivo responsável pelos testes para a geração dos gráficos do projeto.
+  \item tcc\_painel\_testes\_mapas.ipynb - Arquivo responsável pelo teste prévio dos mapas que serão utilizados no arquivo seguinte tcc\_painel\_mapas.py.
+  \item tcc\_painel\_mapas.py - Arquivo responsável pela geração dos mapas do projeto.
+  \item acidentes-rodovias-brasil-streamlit.py - Arquivo concentrador de todos os gráficos do painel agregador.
+\end{itemize}
+
+Para a etapa de pré-processamento dos dados, foi feito o carregamento e leitura prévios dos mesmo no diretório à parte do projeto python (pasta PRF), pois a base de dados utilizada para o trabalho contem muitos arquivos grandes, totalizando mais de 3GB de dados.
+
+O projeto todo pode ser baixado no Github, no repositório público \url{https://github.com/Bergolito/tcc-painel-jupyter-notebook}. Após clonar o repositório com o comando git clone <REPO>, o projeto do painel pode ser executado localmente através do seguinte comando:
+
+\textbf{ \emph{streamlit run acidentes-rodovias-brasil-streamlit.py} }
+
+Após, executar o comando citado anteriormente, teremos a tela inicial do nosso painel. A versão final do painel encontra-se disponível na seguinte url \url{https://painel-acidentes-rodovias-brasil.streamlit.app}.
+
+\begin{figure}[h]
+    \caption{Tela inicial do painel agregador de gráficos}
+    \centerline{\includegraphics[width=0.9\textwidth]{figuras/cap-02/tcc-cap02-painel-tela-inicial.png}}
+    \legend{Fonte: Tela inicial do painel}
+    \label{fig:}
+\end{figure}
+
+
+
+\chapter{Análise Visual dos Dados de Acidentes}\label{ch:intro}
+
+\section{Seleção de escopo da análise}
+
+asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd
+asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd
+
+\section{Pré-processamento e transformações dos dados}
+
+asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd
+asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd
+
+\section{Tipos de visualizações utilizadas}
+
+asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd
+asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd
+
+\section{Métodos de análise}
+
+asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd
+asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd
+
+\chapter{Resultados}\label{ch:intro}
+
+\section{Recursos utilizados}
+
+asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd
+asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd
+
+asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd
+asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd
+
+asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd
+asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd
+
+\section{Análises e descobertas}
+
+asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd
+asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd
+
+% o `[h]' abaixo é um parâmetro opcional que sugere que o LaTeX coloque a
+% figura exatamente neste ponto do texto. Somente preocupe-se com esse tipo
+% de formatação quando o texto estiver completamente pronto (uma frase a mais
+% pode fazer o LaTeX mudar completamente de idéia sobre onde colocar as
+% figuras e tabelas)
+\begin{figure}[h]
+    \caption{Essa é a legenda da Figura}
+    \centerline{\includegraphics[width=0.5\textwidth]{fig.pdf}}
+    \legend{Fonte: Os Autores}
+    \label{fig:ex1}
+\end{figure}
+
+
+asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd
+asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd
+
+asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd
+asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd
+
+\chapter{Conclusão}\label{ch:intro}
+
+\section{Contribuições}
+
+asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd
+asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd
+
+asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd
+asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd
+
+\section{Trabalhos Futuros}
+
+asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd
+asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd asdadadaddsadsad sdasdadad sadasdasdasd sadasdasdasd asasdasdasdasd
+
+
+% e aqui vai a parte principal
+%
+% \chapter{Estado da arte}
+% \chapter{Mais estado da arte}
+% \chapter{A minha contribuição}
+% \chapter{Prova de que a minha contribuição é válida}
+% \chapter{Conclusão}
+
+% referencias
+% aqui será usado o environment padrao `thebibliography'; porém, sugere-se
+% seriamente o uso de BibTeX e do estilo abnt.bst (veja na página do
+% UTUG)
+%
+% observe também o estilo meio estranho de alguns labels; isso é
+% devido ao uso do pacote `natbib', que permite fazer citações de
+% autores, ano, e diversas combinações desses
+
+\bibliographystyle{abntex2-alf}
+\bibliography{biblio}
+
+\end{document}
