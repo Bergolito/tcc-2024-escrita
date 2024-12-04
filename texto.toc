@@ -1,0 +1,29 @@
+\babel@toc {brazilian}{}\relax 
+\babel@toc {english}{}\relax 
+\babel@toc {brazilian}{}\relax 
+\contentsline {chapter}{1~Introdução}{11}{CHAPTER.1}%
+\contentsline {chapter}{2~Fundamentação Teórica}{12}{CHAPTER.2}%
+\contentsline {section}{\numberline {2.1}Configuração do ambiente de desenvolvimento}{12}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Explicando os dados}{12}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Origem dos dados}{12}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Arquivos}{13}{subsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.2.3}Detalhamento dos campos}{13}{subsection.2.2.3}%
+\contentsline {subsubsection}{\numberline {2.2.3.1}Arquivos por ocorrência}{13}{subsubsection.2.2.3.1}%
+\contentsline {subsubsection}{\numberline {2.2.3.2}Arquivos por Pessoa}{17}{subsubsection.2.2.3.2}%
+\contentsline {subsubsection}{\numberline {2.2.3.3}Arquivos por Pessoa - Todas as causas e tipos de acidentes}{20}{subsubsection.2.2.3.3}%
+\contentsline {section}{\numberline {2.3}Gerando os gráficos com Vega-Altair}{20}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Gerando o painel com Streamlit}{21}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Organização do projeto}{21}{section.2.5}%
+\contentsline {chapter}{3~Análise Visual dos Dados de Acidentes}{24}{CHAPTER.3}%
+\contentsline {section}{\numberline {3.1}Explicando o painel}{24}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Seleção de escopo da análise}{29}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Pré-processamento e transformações dos dados}{30}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Tipos de visualizações utilizadas}{30}{section.3.4}%
+\contentsline {section}{\numberline {3.5}Métodos de análise}{31}{section.3.5}%
+\contentsline {chapter}{4~Resultados}{32}{CHAPTER.4}%
+\contentsline {section}{\numberline {4.1}Recursos utilizados}{32}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Análises e descobertas}{33}{section.4.2}%
+\contentsline {chapter}{5~Conclusão}{36}{CHAPTER.5}%
+\contentsline {section}{\numberline {5.1}Contribuições}{36}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Trabalhos Futuros}{37}{section.5.2}%
+\contentsline {chapter}{\xspace {}Refer{\^e}ncias}{38}{schapter.8}%

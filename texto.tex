@@ -236,7 +236,7 @@ Os dados nos quais o trabalho se refere, estão localizados no sítio do Governo
 
 \begin{figure}[h]
     \caption{Origem dos dados da pesquisa}
-    \centerline{\includegraphics[width=0.9\textwidth]{figuras/cap-02/tcc-dados-abertos-prf.png}}
+    \centerline{\includegraphics[width=0.9\textwidth]{figuras/cap-02/tcc-cap02-dados-abertos-prf.png}}
     \legend{Fonte: Sítio Dados Abertos da PRF}
     \label{fig:}
 \end{figure}
@@ -247,7 +247,7 @@ Os arquivos contidos na área de Dados Abertos da PRF, são do tipo específico 
 
 \begin{figure}[h]
     \caption{Lista de arquivos e suas categorias}
-    \centerline{\includegraphics[width=0.9\textwidth]{figuras/cap-02/tcc-arquivos-csv.png}}
+    \centerline{\includegraphics[width=0.9\textwidth]{figuras/cap-02/tcc-cap02-arquivos-csv.png}}
     \legend{Fonte: Sítio Dados Abertos da PRF}
     \label{fig:}
 \end{figure}
@@ -400,6 +400,7 @@ O Altair é uma biblioteca declarativa para visualização de gráficos desenvol
 \end{figure}
 
 \section{Gerando o painel com Streamlit}
+\label{sec:GerandopainelStreamlit}
 
 Como citado na seção anterior, a ferramenta escolhida para criação do painel agregador de gráficos e dados em geral foi o Streamlit, que encontra-se disponível para uso na seguinte url \url{https://streamlit.io/}. O Streamlit foi desenvolvido em Python, possui uma grande quantidade de componentes prontos para uso em recursos de imagens, vídeos, gráficos, llm e mapas. Seu uso é simples e intuitivo, e se destaca por permitir desenvolver e compartilhar aplicativos de dados de forma integrada com a própria plataforma de deploy disponibilizado pelo mesmo.
 
@@ -442,12 +443,168 @@ Após, executar o comando citado anteriormente, teremos a tela inicial do nosso 
     \caption{Tela inicial do painel agregador de gráficos}
     \centerline{\includegraphics[width=0.9\textwidth]{figuras/cap-02/tcc-cap02-painel-tela-inicial.png}}
     \legend{Fonte: Tela inicial do painel}
-    \label{fig:}
+    \label{fig:cap02-painel-tela-inicial}
+\end{figure}
+
+\chapter{Análise Visual dos Dados de Acidentes}\label{ch:intro}
+
+\section{Explicando o painel}
+
+Como citado na seção \ref{sec:GerandopainelStreamlit}, o painel agregador dos gráficos foi desenvolvido com o Streamlit. Por sua vez, esta tecnologia nos permite o uso de algumas facilidades como o uso de abas (ou tabs). Através do uso de abas, podemos organizar melhor o projeto, fazendo com que a navegação entre as telas seja mais fluida, permitindo assim a visualização de uma grande quantidade de gráficos e recursos em uma mesma tela do painel.
+
+O painel foi então construído baseado nas seguintes abas a seguir:
+
+\begin{itemize}
+  \item Acidentes por Critérios
+  \item Rankings Diversos
+  \item Gráficos Fluxo
+  \item Gráficos Barras Empilhadas
+  \item Gráficos de Distribuição    
+  \item Mapa dos Acidentes
+  \item Mapa de Calor  
+\end{itemize}
+
+Para cada aba externa do painel, organizamos seus gráficos em abas internas para permitir uma melhor visibilidade dos mesmos.
+
+A seguir, listaremos as abas internas de cada aba externa do painel, bem como daremos um breve explicação de cada aba.
+
+\textbf{Acidentes por Critérios}
+
+Esta seção de Acidentes por Critérios exibe os gráficos por quantidade de acidentes por critérios diversos, como UF, Tipo, BR, Causa, Classificação, Fase do Dia, Condição Metereológica, Dia da Semana e Tipo de Veículo.
+Caso o ano selecionado seja 'Todos', o gráfico exibirá a quantidade de acidentes por critério para todos os anos disponíveis na base de dados.
+
+\begin{itemize}
+  \item Acidentes por UF
+  \item Acidentes por Tipo 
+  \item Acidentes por BR 
+  \item Acidentes por Causa 
+  \item Acidentes por Classificação
+  \item Acidentes por Fase do Dia 
+  \item Acidentes por Condição Metereológica
+  \item Acidentes por Dia da Semana
+  \item Acidentes por Tipo de Veículo
+\end{itemize}
+
+Para os casos específicos dos gráficos por UF e por BR, foi acrescentado uma opção de selecionar a quantidade de UFs ou de BRs deseja-se visualizar.
+Para o critério UF, temos as opções Top 10 UFs, Top 20 UFs e Todas as UFs. 
+Para o critério BR, temos as opções Top 10 BRs, Top 20 BRs, Top 30 BRs, Top 40 BRs e Top 50 BRs.
+Para os demais critérios (Acidentes por Tipo, Acidentes por Causa, Acidentes por Classificação, Acidentes por Fase do Dia, Acidentes por Condição Metereológica, Acidentes por Dia da Semana e Acidentes por Tipo de Veículo), o padrão é exibir apenas o gráfico de acordo com o critério do ano selecionado, sem filtro específico.
+
+\begin{figure}[h]
+    \caption{Acidentes por UF com a opção de filtro por quantidade de UFs}
+    \centerline{\includegraphics[width=0.9\textwidth]{figuras/cap-03/cap03-acidentes-criterios-por-uf.png}}
+    \label{fig:cap03-filtro-por-uf}
+\end{figure}
+
+\begin{figure}[h]
+    \caption{Acidentes por BRs com a opção de filtro por quantidade de BRs}
+    \centerline{\includegraphics[width=0.9\textwidth]{figuras/cap-03/cap03-acidentes-criterios-br.png}}
+    \label{fig:cap03-filtro-por-br}
+\end{figure}
+
+\textbf{Rankings Diversos}
+
+Esta seção de Acidentes por Ranking, exibe os gráficos de acordo com a posição daquele critério no ranking.
+Para cada aba, são exibidos dois gráficos. O primeiro contendo o ranking de acordo com a posição ordinal do critério (1º, 2º, 3º,...).
+Já o segundo gráfico, exibe o mesmo de acordo com o quantitativo de acidentes.
+
+\begin{itemize}
+  \item Ranking por UF
+  \item Ranking por Tipo
+  \item Ranking por BR 
+  \item Ranking por Classificação
+  \item Ranking por Fase do Dia 
+  \item Ranking por Dia da Semana
+  \item Ranking por Tipo de Veículo
+\end{itemize}
+
+Para os rankings específicos de UFs e BRs, foi acrescentado uma opção de selecionar a quantidade de UFs ou de BRs que se deseja visualizar.
+O ranking de UFs possui as opções Top 10 UFs, Top 20 UFs e Todas as UFs. Já o ranking de BRs, possui as opções Top 10 BRs, Top 20 BRs, Top 30 BRs, Top 40 BRs e Top 50 BRs.
+Para todos os gráficos de ranking, existe ainda possibilidade de selecionar o critério do ranking na legenda à direita do gráfico.
+Assim, ao selecionar alguma opção da legenda, haverá um enfoque da cor da legenda no gráfico e as demais opções serão desfocadas ficando com as linhas na cor cinza.
+Esse recurso é muito útil para visualizar um critério específico em um gráfico onde houver muitas mudanças de posição de uma categoria do gráfico.
+
+\begin{figure}[h]
+    \caption{Ranking por UF com a opção de filtro por quantidade de UFs}
+    \centerline{\includegraphics[width=0.9\textwidth]{figuras/cap-03/cap03-ranking-uf.png}}
+    \label{fig:cap03-filtro-por-uf}
 \end{figure}
 
 
+\textbf{Gráficos Fluxo}
 
-\chapter{Análise Visual dos Dados de Acidentes}\label{ch:intro}
+\begin{itemize}
+  \item Fluxo por UF
+  \item Fluxo por Tipo
+  \item Fluxo por BR
+  \item Fluxo por Causa
+  \item Fluxo por Classificação
+  \item Fluxo por Fase do Dia
+  \item Fluxo por Condição Metereológica
+  \item Fluxo por Dia da Semana
+  \item Fluxo por Tipo de Veículo
+\end{itemize}
+ 
+\textbf{Gráficos Barras Empilhadas}
+
+\begin{itemize}
+  \item Barras Empilhadas por UF 
+  \item Barras Empilhadas por BR 
+  \item Barras Empilhadas por Tipo 
+  \item Barras Empilhadas por Causa de Acidente 
+  \item Barras Empilhadas por Classificação de Acidente 
+  \item Barras Empilhadas por Fase do Dia de Acidente 
+  \item Barras Empilhadas por Condição Metereológica 
+  \item Barras Empilhadas por Dia da Semana 
+  \item Barras Empilhadas por Dia da Semana 
+\end{itemize}
+
+\textbf{Gráficos de Distribuição}
+ 
+\begin{itemize}
+  \item por UF
+  \item por Tipo
+  \item por BR
+  \item por Classificação
+  \item por Causa 
+  \item por Fase do Dia
+  \item por Condição Metereológica
+  \item por Dia da Semana
+  \item por Tipo de Veículo
+\end{itemize}
+
+\textbf{Mapa dos Acidentes}
+
+\begin{itemize}
+  \item Por Ano / Por Rodovia
+  \item Por Ano / Por Rodovia / Por UF
+  \item Mapa 03
+  \item Mapa 04
+\end{itemize}
+         
+\textbf{Mapa de Calor}
+
+\begin{itemize}
+  \item por UF
+  \item por Tipo
+  \item por BR 
+  \item por Classificação
+  \item por Causa 
+  \item por Fase do Dia 
+  \item por Condição Metereológica
+  \item por Dia da Semana 
+  \item por Tipo de Veículo
+\end{itemize}
+                
+Além das abas externas, o painel possui a opção de um filtro por ano na parte superior esquerda, com os anos entre 2007 e 2024, e a opção 'Todos', referente a todos os anos.
+
+\begin{figure}[h]
+    \caption{Filtro por ano do acidente}
+    \centerline{\includegraphics[width=0.5\textwidth]{figuras/cap-03/cap03-filtro-ano.png}}
+    \legend{Filtro por ano do acidente}
+    \label{fig:cap03-filtro-ano}
+\end{figure}
+
 
 \section{Seleção de escopo da análise}
 
